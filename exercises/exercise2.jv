@@ -1,0 +1,84 @@
+// Exercise 2
+    // Build an automated data pipeline for the following source:
+    // https://www.govdata.de/web/guest/suchen/-/details/stadt-neuss-baumpflanzungen-2023
+    // direct link to CSV: https://opendata.rhein-kreis-neuss.de/api/v2/catalog/datasets/stadt-neuss-herbstpflanzung-2023/exports/csv
+// Goal
+    // Keep only valid data we are interested in
+    // Define types of values and constraints for them
+    // We are only interested in Furth, valid stadtteil start with "Furth-"
+    // "id" contains geopoints with the following pattern:
+    // {geo-coordinate 1}, {geo-coordinate 2}
+    // a geo-coordinate is defined as {1-3 numbers}.{numbers}
+    // Drop "baumart_deutsch" column
+    // Drop all rows with invalid values
+    // Assign fitting built-in SQLite types (e.g., BIGINT, TEXT or FLOAT) to all columns
+    // Write data into a SQLite database called “trees.sqlite”, in the table “trees”
+
+
+
+pipeline TPipeline {
+
+	// Pipeline
+	TreeSeparator 
+		-> tTextFileInterpreter
+		-> tCSVInterpreter
+        -> baumartColumnEraser
+		-> tTableInterpreter
+		-> tDatabaseLoader;
+	
+	// Get CSV file
+	block TreeSeparator oftype HttpExtractor {
+		url: 'https://opendata.rhein-kreis-neuss.de/api/v2/catalog/datasets/stadt-neuss-herbstpflanzung-2023/exports/csv';
+	}
+	// Text Interpreter
+	block tTextFileInterpreter oftype TextFileInterpreter { }
+
+	// CSV Interpreter
+	block tCSVInterpreter oftype CSVInterpreter {
+		delimiter: ';';
+	}
+
+	// Table Interpreter
+	block tTableInterpreter oftype TableInterpreter {
+		header: true;
+		columns: [
+            'lfd_nr' oftype integer,
+            'stadtteil' oftype FurthAllowConstrain,
+            'standort' oftype text,
+            'baumart_botanisch' oftype text,
+            'id' oftype GeoAllowConstrain,
+            'baumfamilie' oftype text
+		];
+	}
+
+    block baumartColumnEraser oftype ColumnDeleter {
+        delete: [column E];
+    }
+
+	// Generate the SQLITE database
+	block tDatabaseLoader oftype SQLiteLoader {
+		table: 'trees';
+		file: './trees.sqlite';
+	}
+
+    constraint FurthAllow oftype RegexConstraint {
+        regex: /^Furth-/;
+    }
+
+    valuetype FurthAllowConstrain oftype text {
+    // 10. Valuetypes can be further refined by providing constraints.
+        constraints: [
+            FurthAllow,
+        ];
+    }
+
+    constraint GeoAllow oftype RegexConstraint {
+        regex: /([0-9]{1,3}\.[0-9]+), ([0-9]{1,3}\.[0-9]+)/;
+    }
+
+    valuetype GeoAllowConstrain oftype text {
+        constraints: [
+            GeoAllow,
+        ];
+}
+}
