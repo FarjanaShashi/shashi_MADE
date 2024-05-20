@@ -44,8 +44,12 @@ This dataset contains survey data from African farm households.  It provides a c
 <!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
 
 1: Data Cleaning and Preparation
+
 2: Exploratory Data Analysis 
+
 3: Statistical Analysis
+
 4: Adaptation Strategies
+
 5: Reporting and Recommendations
 
