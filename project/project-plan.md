@@ -23,8 +23,6 @@ Agricultural productivity is severely threatened by climate change, especially i
 
 * Metadata URL: <https://www.kaggle.com/datasets/thedevastator/the-relationship-between-crop-production-and-cli>
 
-* Data URL: <https://www.kaggle.com/datasets/thedevastator/the-relationship-between-crop-production-and-cli>
-
 * Data Type: CSV
 
 This dataset includes information on various crop types and their production levels about climatic factors.
@@ -32,8 +30,6 @@ This dataset includes information on various crop types and their production lev
 ### Datasource2: Agricultural Survey of African Farm Households
 
 * Metadata URL: <https://www.kaggle.com/datasets/crawford/agricultural-survey-of-african-farm-households>
-
-* Data URL: <https://www.kaggle.com/datasets/crawford/agricultural-survey-of-african-farm-households>
 
 * Data Type: CSV
 
