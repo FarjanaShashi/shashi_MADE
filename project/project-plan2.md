@@ -38,13 +38,13 @@ This dataset gives estimates of the rise of global sea levels, based on measurem
 
 <!-- List of work packages ordered sequentially, each pointing to an issue with more details. -->
 
-1. Idea generation for project topic [#1][i1]
-2. Searching for appropriate dataset [#2][i2]
-3. Writing the primary project plan [#3][i3]
-4. Obtaining data from data source [#4][i4]
-5. Sort and fix data [#5][i5]
-6. Analyze Data [#7][i7]
-8. Write a Report [#8][i8]
+1. Idea generation for project topic 
+2. Searching for appropriate dataset 
+3. Writing the primary project plan 
+4. Obtaining data from data source
+5. Sort and fix data 
+6. Analyze Data
+8. Write a Report 
 
 
 
