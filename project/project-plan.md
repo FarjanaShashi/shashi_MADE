@@ -13,7 +13,7 @@
 ## Description
 
 <!-- Describe your data science project in max. 200 words. Consider writing about why and how you attempt it. -->
-Climate change is one of the most important challenges of our time. One of the key factors responsible for this is increasing atmospheric CO₂ concentrations. This increase is causing effects on mean sea levels around the world. This project uses historical data to analyze the correlation between atmospheric CO₂ levels and sea level rise. The analysis will employ statistical methods to establish the relationship between these variables.
+Climate change is one of the most important challenges of our time. One of the key factors responsible for this is CO₂ and Greenhouse Gas Emissions. These emissions are causing effects on mean sea levels around the world. This project uses historical data to analyze the correlation between CO₂ levels and sea level rise. The analysis will employ statistical methods to establish the relationship between these variables.
 ## Datasources
 
 <!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
