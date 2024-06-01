@@ -26,10 +26,10 @@ Climate change is one of the most important challenges of our time. One of the k
 
 This dataset presents the concentration of carbon dioxide in the atmosphere, on a monthly and yearly basis, dating back to 1958.
 
-### Datasource2: Change in Mean Sea Levels
+### Datasource2: Global Average Absolute Sea Level Change, 1880-2014 from the US Environmental Protection Agency using data from CSIRO, 2015; NOAA, 2015.
 
-* Metadata URL: https://climatedata.imf.org/datasets/b84a7e25159b4c65ba62d3f82c605855/explore
-* Data URL: https://opendata.arcgis.com/datasets/b84a7e25159b4c65ba62d3f82c605855_0.csv
+* Metadata URL: [https://climatedata.imf.org/datasets/b84a7e25159b4c65ba62d3f82c605855/explore](https://github.com/datasets/sea-level-rise/blob/master/data/epa-sea-level.csv)
+* Data URL: [https://opendata.arcgis.com/datasets/b84a7e25159b4c65ba62d3f82c605855_0.csv](https://github.com/datasets/sea-level-rise/raw/master/data/epa-sea-level.csv)
 * Data Type: CSV
 
 This dataset gives estimates of the rise of global sea levels, based on measurements from satellite radar altimeters.
