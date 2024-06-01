@@ -12,63 +12,52 @@
 # Update the issues and project plan if necessary
 
 
-
-import os
-from kaggle.api.kaggle_api_extended import KaggleApi
 import pandas as pd
-import numpy as np
-from sqlalchemy import create_engine
+import requests
 
 
-class ExtractData:
-    #Kaggle API initialization
-    def __init__(self):
-        self.kaggle_api = KaggleApi()
-        self.script_dir = os.path.dirname(os.path.abspath(__file__))
-        self.data_dir = os.path.join(self.script_dir,'..','data')
-        self.download_dir = os.path.abspath(self.data_dir)
-        os.environ['KAGGLE_CONFIG_DIR'] = os.path.join(self.script_dir,".kaggle")
-        
-    # This will call kaggle api, perform authentication and download data in Data directory
-    def download_dataset(self,dataset_name):
-        self.kaggle_api.authenticate()
-        self.kaggle_api.dataset_download_files(dataset_name, path=self.download_dir, unzip=True)
-        
-     
-    
-    def load_and_clean_data(self,dataset_name):
-        print("Data Transformation")
-        dataset = pd.read_csv(os.path.join(self.download_dir,dataset_name))
-        numeric_mean = dataset.select_dtypes(include=[np.number]).mean()
-        df_numeric_imputed =dataset.select_dtypes(include=[np.number]).fillna(numeric_mean)
-        dataset_imputed = pd.concat([dataset.select_dtypes(exclude=[np.number]),df_numeric_imputed],axis=1)
-        return dataset_imputed
-    
-    def save_data(self,database_name,dataset):
-        print("Load into Sqlite\n")
-        engine = create_engine(r'sqlite:///'+str(self.download_dir) + '\\' + database_name + r'.sqlite')
-        dataset.to_sql(database_name,con=engine,schema=None,if_exists='replace',index=False)
-    
-    def remove_unnecessary_files(self):
-        print("Removing Unnecessary Files")
-        for filename in os.listdir(self.download_dir):
-            if not filename.endswith(".sqlite"):
-              file_path = os.path.join(self.download_dir, filename)
-              
-              if os.path.isfile(file_path):
-                  os.remove(file_path)
-                  print(f"file removed: {filename}")
-        
-        
-#pipeline
-if __name__ == '__main__':    
-    extract = ExtractData()
-    extract.download_dataset('thedevastator/the-relationship-between-crop-production-and-cli')        
-    dataset = extract.load_and_clean_data('Crop_Production_and_Climate_Change.csv')   
-    extract.save_data('relationship', dataset)   
+class Pipeline:
+    def __init__(self, url1, url2):
+        self.url1 = url1
+        self.url2 = url2
+        self.data1 = None
+        self.data2 = None
 
-    print("Loading new data\n")             
-    extract.download_dataset("crawford/agricultural-survey-of-african-farm-households")
-    dataset = extract.load_and_clean_data("African_Farm_Households.csv")
-    extract.save_data('survey', dataset)  
-    extract.remove_unnecessary_files()  
+    def get_data(self):
+        downloaded1 = requests.get(self.url1)
+        downloaded2= requests.get(self.url2)
+
+        with open('file1.csv', 'wb') as file:
+            file.write(downloaded1.content)
+                
+        self.data1 = pd.read_csv("file1.csv")
+
+        with open('file2.csv', 'wb') as file:
+            file.write(downloaded2.content)
+                
+        self.data2 = pd.read_csv("file2.csv")
+
+
+    def transform(self):
+        self.data1 = self.data1[self.data1["country"]=="World"]
+        self.data1 = self.data1[["year", "co2", "co2_growth_prct"]]
+        self.data2 = self.data2[["Year", "CSIRO Adjusted Sea Level"]]
+
+        self.data = pd.merge(self.data1, self.data2, left_on="year", right_on="Year")
+        self.data.drop(columns=["Year"], inplace=True)
+
+
+    def save(self):
+        self.data.to_csv(".//data//data.csv", index=False)
+
+    def run_pipeline(self):
+        self.get_data()
+        self.transform()
+        self.save()
+
+
+
+if _name_ == '_main_':
+    pipe = Pipeline("https://github.com/owid/co2-data/raw/master/owid-co2-data.csv",
+                    "https://github.com/datasets/sea-level-rise/raw/master/data/epa-sea-level.csv")
+    pipe.run_pipeline()
