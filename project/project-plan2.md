@@ -18,10 +18,10 @@ Climate change is one of the most important challenges of our time. One of the k
 
 <!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
 
-### Datasource1: Atmospheric CO₂ Concentrations
+### Datasource1: Data on CO2 and Greenhouse Gas Emissions by Our World in Data
 
-* Metadata URL: https://climatedata.imf.org/datasets/9c3764c0efcc4c71934ab3988f219e0e/explore
-* Data URL: https://opendata.arcgis.com/datasets/9c3764c0efcc4c71934ab3988f219e0e_0.csv
+* Metadata URL: [https://climatedata.imf.org/datasets/9c3764c0efcc4c71934ab3988f219e0e/explore](https://github.com/owid/co2-data/blob/master/owid-co2-codebook.csv)
+* Data URL: [https://opendata.arcgis.com/datasets/9c3764c0efcc4c71934ab3988f219e0e_0.csv](https://github.com/owid/co2-data/raw/master/owid-co2-data.csv)
 * Data Type: CSV
 
 This dataset presents the concentration of carbon dioxide in the atmosphere, on a monthly and yearly basis, dating back to 1958.
