@@ -2,12 +2,12 @@
 
 ## Title
 <!-- Give your project a short title. -->
-### The Impact of Atmospheric CO₂ Concentrations on Sea Level Rise
+### The Impact of CO2 and Greenhouse Gas Emissions on Sea Level Rise
 
 ## Main Question
 
 <!-- Think about one main question you want to answer based on the data. -->
-1. How do rising atmospheric CO₂ concentrations correlate with changes in mean sea levels?
+1. How do rising CO2 and Greenhouse Gas Emissions correlate with changes in mean sea levels?
 
 
 ## Description
