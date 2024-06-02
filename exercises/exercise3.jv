@@ -30,7 +30,7 @@ pipeline dataPipeline {
 
     block headerWriter2 oftype CellWriter {
         at: range AT1:AU1;
-        write: ["international", "total"];
+        write: ["abroad", "total"];
     }
 
     constraint MonthRegex oftype RegexConstraint {
@@ -68,10 +68,10 @@ pipeline dataPipeline {
         columns: [
             "year" oftype PositiveInteger,
             "month" oftype MonthType,
-            "item_id" oftype ItemIdType,
-            "item_name" oftype text,
-            "item_source" oftype text,
-            "international" oftype PositiveInteger,
+            "goods_id" oftype GoodsIdType,
+            "goods_name" oftype text,
+            "goods_source" oftype text,
+            "abroad" oftype PositiveInteger,
             "total" oftype PositiveInteger
         ];
     }
