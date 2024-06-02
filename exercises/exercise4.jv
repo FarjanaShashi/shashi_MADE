@@ -1,0 +1,98 @@
+pipeline weatherDataPipeline {
+    weatherDataExtractor
+        -> fileSelector
+        -> textFileProcessor
+        -> csvProcessor
+        -> headerRenamer1
+        -> headerRenamer2
+        -> tableProcessor
+        -> temperatureConverter
+        -> batterytemperatureConverter
+        -> dataSaver;
+        
+
+    block weatherDataExtractor oftype GTFSExtractor {
+        url: "https://www.mowesta.com/data/measure/mowesta-dataset-20221107.zip";
+    }
+
+    block fileSelector oftype FilePicker {
+        path: "/data.csv";
+    }
+
+  
+    // 5. The rest of the pipeline follows the usual pattern.
+    block textFileProcessor oftype TextFileInterpreter { }
+
+    block csvProcessor oftype CSVInterpreter { 
+        delimiter: ";";
+        enclosing: '';
+    }
+   
+    block headerRenamer1 oftype CellWriter {
+        at: range A1:E1;
+        write: ["id", "producer", "model", "month", "temperature"];
+    }
+
+    block headerRenamer2 oftype CellWriter {
+        at: cell J1;
+        write: ["battery_temperature"];
+    }
+
+    constraint LowerBound_1 oftype RangeConstraint {
+        lowerBound: 1;
+        lowerBoundInclusive: true;
+    }
+
+    valuetype PositiveInteger oftype integer {
+        constraints: [LowerBound_1,];
+    }
+
+    constraint LowerUpperBound_2 oftype RangeConstraint {
+        lowerBound: 1;
+        lowerBoundInclusive: true;
+        upperBound: 12;
+        upperBoundInclusive: true;
+    }
+
+    valuetype MonthValue oftype integer {
+        constraints: [LowerUpperBound_2,];
+    }
+
+    block temperatureConverter oftype TableTransformer {
+        inputColumns: ["temperature"];
+        outputColumn: "temperature";
+        use: celsiusToFahrenheit;
+    }
+
+    block batterytemperatureConverter oftype TableTransformer {
+        inputColumns: ["battery_temperature"];
+        outputColumn: "battery_temperature";
+        use: celsiusToFahrenheit;
+    }
+
+    transform celsiusToFahrenheit {
+        from c oftype decimal;
+        to f oftype decimal;
+
+        f:  (c * 9/5) + 32;
+    }
+
+    
+    block tableProcessor oftype TableInterpreter {
+        header: true;
+        columns:[
+            "id" oftype PositiveInteger,
+            "producer" oftype text,
+            "model" oftype text,
+            "month" oftype MonthValue,
+            "temperature" oftype decimal,
+            "battery_temperature" oftype decimal
+        ];
+    }
+
+    
+    block dataSaver oftype SQLiteLoader {
+        table: "temperatures";
+        file: "./temperatures.sqlite";
+    }
+}
