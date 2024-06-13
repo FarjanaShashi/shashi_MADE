@@ -11,7 +11,7 @@
 #         This data set will be the base for your data report in future project work
 # Update the issues and project plan if necessary
 
-
+import os
 import pandas as pd
 import requests
 
@@ -48,6 +48,8 @@ class Pipeline:
 
 
     def save(self):
+        # Ensure the data directory exists
+        os.makedirs("./data", exist_ok=True)
         self.data.to_csv(".//data//data.csv", index=False)
 
     def run_pipeline(self):
