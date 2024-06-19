@@ -24,9 +24,9 @@ pipeline transportStopsPipeline {
     }
 
     constraint LatitudeRange oftype RangeConstraint {
-        lowerBound: -91;
+        lowerBound: -90;
         lowerBoundInclusive: false;
-        upperBound: 91;
+        upperBound: 90;
         upperBoundInclusive: false;
     }
 
