@@ -1,4 +1,4 @@
-name: CI for Shashi MADE
+name: CI for Shashi Project
 
 on:
   push:
@@ -22,7 +22,8 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
-          pip install -r requirements.txt  # Assuming you have a requirements.txt file
+          pip install -r requirements.txt
+          pip list  # List installed packages for debugging
 
       - name: Run tests
         run: |
