@@ -18,6 +18,12 @@ jobs:
         with:
           python-version: '3.x'  # Adjust the Python version as necessary
 
+      - name: Install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt  # Assuming you have a requirements.txt file
+
       - name: Run tests
         run: |
           chmod +x project/test.sh  # Ensure test.sh is executable
