@@ -1,0 +1,24 @@
+name: CI for Shashi MADE
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # Adjust the Python version as necessary
+
+      - name: Run tests
+        run: |
+          chmod +x project/test.sh  # Ensure test.sh is executable
+          ./project/test.sh
