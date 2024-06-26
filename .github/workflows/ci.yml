@@ -1,5 +1,4 @@
-
-name: CI
+name: Continuous Integration
 
 on:
   push:
@@ -12,19 +11,22 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
-    - name: Set up Python 3.12
+    - name: Python Set up 3.12
       uses: actions/setup-python@v4
       with:
-        python-version: 3.12
+        python-version: '3.12'
 
-    - name: Install Dependencies
+    - name: Verify Python Version
+      run: python --version
+
+    - name: Install Libraries
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Pipeline Tests
+    - name: Run Tests
       run: |
         chmod +x ./project/test.sh
         ./project/test.sh
