@@ -4,7 +4,7 @@ import time
 
 def test_pipeline_execution():
     #run the pipeline script
-    subprocess.run(['python', 'project/pipeline.py'], check=True)
+    subprocess.run(['python', './project/pipeline.py'], check=True)
     
 
     time.sleep(5)
