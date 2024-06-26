@@ -59,7 +59,7 @@ class Pipeline:
 
 
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     pipe = Pipeline("https://github.com/owid/co2-data/raw/master/owid-co2-data.csv",
                     "https://github.com/datasets/sea-level-rise/raw/master/data/epa-sea-level.csv")
     pipe.run_pipeline()
