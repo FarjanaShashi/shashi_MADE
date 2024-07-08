@@ -2,11 +2,7 @@
 Climate change is one of the most important challenges of our time. One of the key factors responsible for this is CO₂ and Greenhouse Gas Emissions. These emissions are causing effects on mean sea levels around the world. This project uses historical data to analyze the correlation between CO₂ levels and sea level rise. The analysis will employ statistical methods to establish the relationship between these variables. And give you a clear picture of how rising CO2 and Greenhouse Gas Emissions correlate with changes in mean sea levels. 
 
 ***How do rising CO2 and Greenhouse Gas Emissions correlate with changes in mean sea levels?***
-<figure align="center" style="width:100%; backgroud-color: white">
-    <img src="data:image/bmp;base64,Qk32BAAAAAAAADYAAAAoAAAACAAAAAgAAAABABgAAAAAAMAAAAATCwAAEwsAAAAAAAAAAAAAhX1vfXdqbWlgaWdgeHVth4N5iYV7gn11iIN3fnpzaGhsYWRsdXR1iYV+jYmAhIF8jYl/gH99ZWl5W2N5dHV+jImEko6GiIeEkY2FhYSEaW+BX2iCd3qFkI2JlZKLjIuKlJCHioiGdXiFbXOGgIGJk5GMmJWNj4+Ml5CGkIuFg4KFf4CGiomKlpSOmJaOkpGMmJCElI2DjYmDjIqFkpCKmJWOmJaOlJKLmI+Dlo6CkYyCkY2ElZKJmZaNmJWNlZKK" class="O9fwi">"
-         alt="Cover Image"
-         style="width:60%">
-</figure>
+
 
 > ##### Used Data
 
