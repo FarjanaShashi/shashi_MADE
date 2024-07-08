@@ -8,7 +8,7 @@ Climate change is one of the most important challenges of our time. One of the k
 
 This project utilized two open datasets from the well-regarded ***[`[INTERNATIONAL MONETARY FUND]`](https://www.imf.org)*** repository. They provided essential information for my research. These datasets are freely available for academic use, as specified in the ***[`[Terms]`](https://www.imf.org/external/terms.htm)***. The datasets I employed are:
 
-- **[Data on CO2 and Greenhouse Gas Emissions by Our World in Data}(https://climatedata.imf.org/datasets/9c3764c0efcc4c71934ab3988f219e0e/explore)**
+- **[Data on CO2 and Greenhouse Gas Emissions by Our World in Data](https://climatedata.imf.org/datasets/9c3764c0efcc4c71934ab3988f219e0e/explore)**
 - **[Global Average Absolute Sea Level Change, 1880-2014 from the US Environmental Protection
 Agency using data from CSIRO, 2015; NOAA, 2015](https://climatedata.imf.org/datasets/b84a7e25159b4c65ba62d3f82c605855/explore)**
 
