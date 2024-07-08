@@ -50,6 +50,16 @@ sea levels have increased significantly over the analyzed period. The scatter pl
 coefficient further reinforce the connection between these variables, supporting the hypothesis that rising
 CO2 levels contribute to sea-level rise.
 
+> #### Important Links:
+* [Pipeline Source Code](https://github.com/FarjanaShashi/shashi_MADE/blob/main/project/pipeline.py)
+
+* [Testing Source Code](https://github.com/FarjanaShashi/shashi_MADE/blob/main/project/test.py)
+
+* Reports:
+	* [Data Report](https://github.com/FarjanaShashi/shashi_MADE/blob/main/project/data-report.pdf)
+
+	* [Analysis Report](https://github.com/FarjanaShashi/shashi_MADE/blob/main/project/analysis-report.pdf)
+
 # Exercise Badges
 
 ![](https://byob.yarr.is/FarjanaShashi/shashi_MADE/score_ex1) ![](https://byob.yarr.is/FarjanaShashi/shashi_MADE/score_ex2) ![](https://byob.yarr.is/FarjanaShashi/shashi_MADE/score_ex3) ![](https://byob.yarr.is/FarjanaShashi/shashi_MADE/score_ex4) ![](https://byob.yarr.is/FarjanaShashi/shashi_MADE/score_ex5)
