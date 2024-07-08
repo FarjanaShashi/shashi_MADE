@@ -14,6 +14,41 @@ Agency using data from CSIRO, 2015; NOAA, 2015](https://climatedata.imf.org/data
 
 The comprehensive data in these datasets facilitated in-depth analysis. To maximize their utility, I developed and executed a data pipeline, detailed in the *[`[Source Code]`](https://github.com/FarjanaShashi/shashi_MADE/blob/main/project/pipeline.py)* to streamline the data backend workflow.
 
+> ##### Final Merged Dataset
+The final dataset was created by merging the CO2 emissions data and sea-level change data in
+the “year” column. The resulting dataset includes-
+● year: The year of the data point,
+● co2: The CO2 emissions for the "World",
+● co2_growth_prct: The percentage growth of CO2 emissions for the "World",
+● CSIRO Adjusted Sea Level: The CSIRO adjusted sea level data.
+
+> ##### Analysis
+1. Data Retrieval: Download the datasets from the provided URLs.
+2. Data Filtering and Selection:
+○ From the CO2 emissions dataset, filter the data to include only rows where the country is
+"World" and select the relevant columns (year, co2, co2_growth_prct).
+○ From the sea-level dataset, select the relevant columns (Year, CSIRO Adjusted Sea
+Level).
+3. Data Transformation:
+○ Rename the “Year” column in the sea-level dataset to “year” to match the CO2 emissions
+dataset.
+○ Merge the datasets on the “year” column.
+4. Data Cleaning: Drop any redundant columns and handle any missing values resulting from the
+merge.
+
+> ##### Methodology
+To understand the correlation between CO2 emissions and sea-level rise, I performed the following
+analyses-
+1. Trend Analysis: Analyzed trends in CO2 emissions and sea levels over the years.
+2. Correlation Analysis: Calculated the Pearson correlation coefficient between CO2 emissions
+and sea levels.
+
+> ##### Results and Interpretation
+From the analysis, it is evident that there is a strong correlation between the rise in CO2 concentrations
+and the increase in sea levels over the years. The trend plot illustrates that both CO2 concentrations and
+sea levels have increased significantly over the analyzed period. The scatter plot and the high correlation
+coefficient further reinforce the connection between these variables, supporting the hypothesis that rising
+CO2 levels contribute to sea-level rise.
 
 # Exercise Badges
 
