@@ -1,3 +1,24 @@
+# Impact of CO2 and Greenhouse Gas Emissions on Sea-Level Rise
+Climate change is one of the most important challenges of our time. One of the key factors responsible for this is CO₂ and Greenhouse Gas Emissions. These emissions are causing effects on mean sea levels around the world. This project uses historical data to analyze the correlation between CO₂ levels and sea level rise. The analysis will employ statistical methods to establish the relationship between these variables. And give you a clear picture of how rising CO2 and Greenhouse Gas Emissions correlate with changes in mean sea levels. 
+
+***How do rising CO2 and Greenhouse Gas Emissions correlate with changes in mean sea levels?***
+<figure align="center" style="width:100%; backgroud-color: white">
+    <img src="data:image/bmp;base64,Qk32BAAAAAAAADYAAAAoAAAACAAAAAgAAAABABgAAAAAAMAAAAATCwAAEwsAAAAAAAAAAAAAhX1vfXdqbWlgaWdgeHVth4N5iYV7gn11iIN3fnpzaGhsYWRsdXR1iYV+jYmAhIF8jYl/gH99ZWl5W2N5dHV+jImEko6GiIeEkY2FhYSEaW+BX2iCd3qFkI2JlZKLjIuKlJCHioiGdXiFbXOGgIGJk5GMmJWNj4+Ml5CGkIuFg4KFf4CGiomKlpSOmJaOkpGMmJCElI2DjYmDjIqFkpCKmJWOmJaOlJKLmI+Dlo6CkYyCkY2ElZKJmZaNmJWNlZKK" class="O9fwi">"
+         alt="Cover Image"
+         style="width:60%">
+</figure>
+
+> ##### Used Data
+
+This project utilized two open datasets from the well-regarded ***[`[INTERNATIONAL MONETARY FUND]`](https://www.imf.org)*** repository. They provided essential information for my research. These datasets are freely available for academic use, as specified in the ***[`[Terms]`](https://www.imf.org/external/terms.htm)***. The datasets I employed are:
+
+- **[Data on CO2 and Greenhouse Gas Emissions by Our World in Data}(https://climatedata.imf.org/datasets/9c3764c0efcc4c71934ab3988f219e0e/explore)**
+- **[Global Average Absolute Sea Level Change, 1880-2014 from the US Environmental Protection
+Agency using data from CSIRO, 2015; NOAA, 2015](https://climatedata.imf.org/datasets/b84a7e25159b4c65ba62d3f82c605855/explore)**
+
+The comprehensive data in these datasets facilitated in-depth analysis. To maximize their utility, I developed and executed a data pipeline, detailed in the *[`[Source Code]`](https://github.com/tanvirtanjum/MADE-SS-24/blob/main/project/pipeline.py)* to streamline the data backend workflow.
+
+
 # Exercise Badges
 
 ![](https://byob.yarr.is/FarjanaShashi/shashi_MADE/score_ex1) ![](https://byob.yarr.is/FarjanaShashi/shashi_MADE/score_ex2) ![](https://byob.yarr.is/FarjanaShashi/shashi_MADE/score_ex3) ![](https://byob.yarr.is/FarjanaShashi/shashi_MADE/score_ex4) ![](https://byob.yarr.is/FarjanaShashi/shashi_MADE/score_ex5)
