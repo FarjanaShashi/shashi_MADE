@@ -12,7 +12,7 @@ This project utilized two open datasets from the well-regarded ***[`[INTERNATION
 - **[Global Average Absolute Sea Level Change, 1880-2014 from the US Environmental Protection
 Agency using data from CSIRO, 2015; NOAA, 2015](https://climatedata.imf.org/datasets/b84a7e25159b4c65ba62d3f82c605855/explore)**
 
-The comprehensive data in these datasets facilitated in-depth analysis. To maximize their utility, I developed and executed a data pipeline, detailed in the *[`[Source Code]`]((https://github.com/FarjanaShashi/shashi_MADE/blob/main/project/pipeline.py))* to streamline the data backend workflow.
+The comprehensive data in these datasets facilitated in-depth analysis. To maximize their utility, I developed and executed a data pipeline, detailed in the *[`[Source Code]`](https://github.com/FarjanaShashi/shashi_MADE/blob/main/project/pipeline.py)* to streamline the data backend workflow.
 
 
 # Exercise Badges
